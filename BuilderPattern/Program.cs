@@ -2,7 +2,6 @@
 using BuilderPattern.Method1;
 using BuilderPattern.Method2;
 using BuilderPattern.Method3;
-using System.Xml.Linq;
 
 
 #region Method1
@@ -35,10 +34,11 @@ EmployeeM1 empM1 = empM1Builder
 
 #region Method3
 
-EmployeeM2 GenerateEmployeeM2 (string fullName,string email,string username,EmployeeType empType){
+EmployeeM2 GenerateEmployeeM2(string fullName, string email, string username, EmployeeType empType)
+{
 
     IEmployeeM2Builder empM2Builder;
-    
+
     switch (empType)
     {
         case EmployeeType.External:
@@ -62,5 +62,5 @@ EmployeeM2 GenerateEmployeeM2 (string fullName,string email,string username,Empl
 }
 
 //My email adress will be endwith @gmail.com, in despite of I set to my mail adress to @gmail.com
-Console.WriteLine(GenerateEmployeeM2("Emre Can Kurtar","emre.kurtar@gmail.com","0the1emre",EmployeeType.Internal).Email);
+Console.WriteLine(GenerateEmployeeM2("Emre Can Kurtar", "emre.kurtar@gmail.com", "0the1emre", EmployeeType.Internal).Email);
 #endregion
